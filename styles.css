@@ -276,7 +276,7 @@ td {
 
 @font-face {
   font-family: 'Digits';
-  src: url('./digital-7.ttf') format('truetype');
+  src: url('./assets/digital-7.ttf') format('truetype');
 }
 
 .score {
