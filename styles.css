@@ -1,0 +1,291 @@
+body{
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: auto; 
+    text-align: center;
+    background-color: #501F3A; 
+    
+}
+
+h1{
+  
+  color: white;
+  font-size: 28px;
+}
+
+h2{
+  color: white;
+  
+  font-size: 23px;
+  margin-bottom: 30px;
+}
+
+p{
+  color:white;
+}
+/* Containers */
+.header{
+  width:100%;
+  display: flex;
+}
+
+.menu{
+  width:40px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.gameArea{
+  display: flex;
+}
+
+.Boards {
+  width: 900px;
+  justify-content: space-between;
+  display: flex;
+  margin: 0 auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10,40px);
+  grid-template-rows: repeat(10,40px);
+  width: calc(10*40px);
+  margin: 30px;
+  margin-top: 0;
+  position: relative;
+}
+
+.Ships{
+  width: 830px;
+  height:200px;
+  display: flex;
+  margin:  0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+
+}
+
+/* Tile */
+.tile {
+  width: 40px;
+  height: 40px;
+  border: 0.75px solid #b6d5f1; 
+  box-sizing: border-box;
+  background-color: #bfeeff; 
+  position: relative;
+  
+}
+
+.ship{
+  background-color: #14A098;
+ 
+  border:1px solid #118781;
+  
+}
+
+
+#computer .ship{
+  background-color: #bfeeff;
+  border: 0.75px solid #b6d5f1; 
+  box-sizing: border-box;
+}
+
+.ship-replica{
+  height: 40px;
+  background-color: #14A098;
+  border:1px solid #118781;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  
+}
+
+
+.hit {
+ 
+  background-color: rgb(255, 0, 111) !important; 
+  
+}
+
+.miss {
+ 
+  background-color: rgb(151, 151, 151) !important;
+
+}
+
+.miss::after {
+  content: "";
+  width: 6px; 
+  height: 6px; 
+  background-color: rgb(44, 44, 44); 
+  border-radius: 50%; 
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+/* Sunk Animation */
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, -2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.sunk{
+  background-color: black !important;
+  animation: vibrate 0.5s ease-in-out  ;
+}
+
+
+
+
+
+
+
+/* Buttons */
+
+.start {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; 
+  background-color: rgb(255, 0, 111);  
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left:50px;
+  
+  
+}
+
+
+.reset{
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; 
+  background-color: rgb(255, 0, 111); 
+  border: none;
+  border-radius: 5px;
+  display: none;
+  margin: 0 auto;
+}
+
+
+
+#play-again {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; 
+  background-color: rgb(255, 0, 111); 
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: none; 
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 60px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h3{
+  color:#501F3A
+}
+
+.turn{
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; 
+  background-color: rgb(255, 187, 0);
+  display: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  
+}
+
+.player-scoreBoard, .computer-scoreBoard {
+  width: 50%; 
+  
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 0 auto;
+ 
+}
+
+
+
+td {
+  
+  padding: 9px; 
+  text-align: center;
+  font-size: 14px; 
+}
+
+#heading{
+  color: white;
+  font-size: 16px;
+  
+}
+
+@font-face {
+  font-family: 'Digits';
+  src: url('./digital-7.ttf') format('truetype');
+}
+
+.score {
+  font-family: 'Digits', monospace;
+  width: 50px; /* Set the width */
+  height: 50px; /* Set the height */
+  border: 1px solid #ddd;
+  font-size: 30px; /* Adjust the font size */
+  background-color: black;
+  color: #ffffff;
+  margin: 2px;
+}
